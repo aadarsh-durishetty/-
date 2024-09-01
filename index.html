@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="shortcut icon" href="assets/img/foot_logo.png"/>
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <title>Aadarsh Durishetty</title>
+        <style>
+            .nav__logo-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .nav__logo-img {
+                width: 50px; /* Adjust the size as needed */
+                margin-right: 10px;
+            }
+
+            .work__item, .cert__item {
+                position: relative;
+                 overflow: hidden;
+                 cursor: pointer;
+            }
+
+            .work__img, .cert__img img {
+                display: block;
+                width: 100%;
+                transition: opacity 0.3s;
+            }
+
+            .work__popup, .cert__popup {
+               visibility: hidden;
+               opacity: 0;
+               background-color: rgba(255, 255, 255, 0.7);
+               color: #002d68;
+               text-align: center;
+               padding: 20px;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               width: 100%;
+               height: 100%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               transition: opacity 0.3s, visibility 0.3s;
+               z-index: 1;
+            }
+
+            .work__item:hover .work__img img {
+                 opacity: 0.5;
+            }
+
+            .work__item:hover .work__popup {
+                  visibility: visible;
+                  opacity: 1;
+            }
+            .credly img.credly-icon {
+                 width: 50px; /* Adjust the size to match other icons */
+                 height: 50px; /* Maintain aspect ratio */
+                /* vertical-align: middle; Align it with the text */
+                transition: opacity 0.3s ease;
+            }
+
+           .credly img.credly-icon:hover {
+                 opacity: 0.7; /* Change opacity or add other hover effects */
+            }
+
+.button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button-like {
+    width: 70px;
+    height: 60px;
+    background-image: url('assets/img/like.png');
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 20px; /* Space between the button and counter */
+}
+.button-coffee {
+    width: 65px;
+    height: 65px;
+    background-image: url('assets/img/coffee.png');
+    background-size: cover;
+    cursor: pointer;
+    margin-right: 20px; /* Space between the button and counter */
+}
+.button-like:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+.button-coffee:hover{
+    transform: scale(1.2);
+    transition: 0.3s;
+}
+
+#likeCounter {
+    font-size: 25px; /* Adjust the size as needed */
+    color: #333; /* Adjust the color as needed */
+    margin-right: 20px;
+}
+#coffeeCounter {
+    font-size: 25px; /* Adjust the size as needed */
+    color: #333; /* Adjust the color as needed */
+    margin-right: 20px;
+}
+.skills__img{
+    height: 400px;
+    width: 500px;
+}
+
+
+        </style>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div class="nav__logo-container">
+                    <img src="assets/img/main_logo.png" alt="Logo" class="nav__logo-img">
+                    <a href="#" class="nav__logo">Aadarsh Durishetty</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#cert" class="nav__link">Certifications</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Aadarsh</span><br>Student Developer.</h1>
+
+                    <div class="button-container">
+                        <div class="button-like" id="likeButton"></div>
+                        <span id="likeCounter">0</span> <!-- Counter starts at 0 -->
+                        <div class="button-coffee" id="coffeeButton"></div>
+                        <span id="coffeeCounter">0</span> <!-- Counter starts at 0 -->
+                    </div>             
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/aadarsh-durishetty-9508a0232/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://join.skype.com/invite/vsehoqq2WDm9" class="home__social-icon"><i class='bx bxl-skype' ></i></a>
+                    <a href="https://github.com/aadarsh-durishetty" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                    <a href="mailto:aadarsh.durishetty@gmail.com" class="home__social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.credly.com/users/aadarsh-durishetty" class="credly"><img src="assets/img/credly-icon.png" alt="Credly" class="credly-icon"></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="60" href="assets/img/test1.png" style="width: 380px;"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/main_logo.png" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Who Am I?</h2>
+                        <p class="about__text">Hi, I’m a Senior year Computer Science student from India with a CGPA of 9.09. I specialize in Web Application Development and AWS Cloud tools. I have experience with industry-standard technologies and tools through various semester projects, including extensive work in Web Development and Machine Learning.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== TECHNICAL SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Technical Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <!-- <h2 class="skills__subtitle" >My Professional Skills.</h2> -->
+                        <!-- <p class="skills__text">skills</p> -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/html.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/css.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">HTML . Tailwind CSS</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/js.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/react.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/node.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">JS . React . NodeJS</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/c.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/cpp.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">C . C++</span>
+                            </div>
+                            <div class="skills__bar skills__cpp">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/python.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Python</span>
+                            </div>
+                            <div class="skills__bar skills__python">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/java.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Java</span>
+                            </div>
+                            <div class="skills__bar skills__java">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/mongodb.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/nosql.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/mysql.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">MongoDB . NoSQL . MySQL</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/vscode.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/git.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <img src="assets/img/github.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">VScode . GIT . GitHub</span>
+                            </div>
+                            <div class="skills__bar skills__dev">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/aws.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Amazon Web Services</span>
+                            </div>
+                            <div class="skills__bar skills__aws">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- <div>              
+                        <img src="assets/img/skill.png" alt="" class="skills__img">
+                    </div> -->
+                    <div id="gif-container1" style="width:100%;height:0;padding-bottom:56%;position:relative;">
+                        <div id="loading-text1" style="position:absolute; width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:40px; font-weight: bolder; font-style: italic; color:#000;">
+                            Loading...
+                        </div>
+                        <iframe id="giphy-iframe1" src="https://giphy.com/embed/JTTAjM197sku8MgrRa" width="100%" height="100%" style="position:absolute; display:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </div>
+                    <p><a href="https://giphy.com/gifs/recordingacademy-grammys-2022-JTTAjM197sku8MgrRa" alt="Loading..." src="assets/img/techskills.png">via GIPHY</a></p>
+                                        
+                    <!-- <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/JTTAjM197sku8MgrRa" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/recordingacademy-grammys-2022-JTTAjM197sku8MgrRa" alt src="assets/img/techskills.png">via GIPHY</a></p> -->
+                </div>
+            </section>
+
+             <!--===== PROFESSIONAL SKILLS =====-->
+             <section class="skills section" id="skills">
+                <h2 class="section-title">Professional Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <!-- <h2 class="skills__subtitle" >My Professional Skills.</h2> -->
+                        <!-- <p class="skills__text">skills</p> -->
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/team.jpg" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Teamwork</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/lead.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Leadership</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/creative.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Problem Solving</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/comm.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Communication</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/critical.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Creative</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img src="assets/img/time.png" alt="Credly" class="skills__icon" style="height: 24px;"></i></a>
+                                <span class="skills__name">Time Management</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage"></span>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                    <!-- <div>              
+                        <img src="assets/img/profskill.jpg" alt="" class="skills__img">
+                    </div> -->
+                    <div id="gif-container2" style="width:270px; height:480px; position:relative;">
+                        <div id="loading-text2" style="position:absolute; width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:40px; font-weight: bolder; font-style: italic;  color:#000;">
+                            Loading...
+                        </div>
+                        <iframe id="giphy-iframe2" src="https://giphy.com/embed/sgO8S8ZVGIRg6aWJsU" width="270" height="480" style="position:absolute; display:none;" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    </div>
+                    <p><a href="https://giphy.com/gifs/allmountainstyle-office-ams-all-mountain-style-sgO8S8ZVGIRg6aWJsU">via GIPHY</a></p>
+                    <!-- <iframe src="https://giphy.com/embed/sgO8S8ZVGIRg6aWJsU" width="270" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/allmountainstyle-office-ams-all-mountain-style-sgO8S8ZVGIRg6aWJsU">via GIPHY</a></p> -->
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <!--===== CERTIFICATIONS =====-->
+            <section class="cert section" id="cert">
+                <h2 class="section-title">Certifications</h2>
+                <h2 class="skills__subtitle" style="text-align: center;">Certifications I have achieved.</h2>
+            
+                <div class="cert__container bd-grid">
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/cda2bc53-8a60-43be-9970-086b9c029de6/public_url" class="cert__img">
+                            <img src="assets/img/cert1.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/2bf1818f-d0bd-4b93-9296-118b0b1131b5/public_url" class="cert__img">
+                            <img src="assets/img/cert2.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/4506681d-d436-4bfe-ac5c-afcfb4028f9e/public_url" class="cert__img">
+                            <img src="assets/img/cert3.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/041b49d8-d931-48ae-ab6b-73193d672c78/public_url" class="cert__img">
+                            <img src="assets/img/cert4.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/135a80a7-4ff8-4e43-801f-2da4d6f0d734/public_url" class="cert__img">
+                            <img src="assets/img/cert5.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://www.credly.com/badges/4aace289-eb7e-4493-8eaf-f33147367f79/public_url" class="cert__img">
+                            <img src="assets/img/cert6.png" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://drive.google.com/file/d/1VRAjYSOCui7V3i6TPmgZPnntKnje6jZq/view?usp=drive_link" class="cert__img">
+                            <img src="assets/img/cert7.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://drive.google.com/file/d/1YnejqGOGaZeX-mVouSo8HglqqdBbJkVz/view?usp=drive_link" class="cert__img">
+                            <img src="assets/img/cert8.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="cert__item">
+                        <a href="https://drive.google.com/file/d/1n6Ij4AeDdo0dARRYyTYjyyO1sqJE-rL2/view?usp=sharing" class="cert__img">
+                            <img src="assets/img/cert9.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+                <h2 class="skills__subtitle" style="text-align: center;">Projects I have built.</h2>
+            
+                <div class="work__container bd-grid">
+                    <div class="work__item">
+                        <a href="work1.html" class="work__img">
+                            <img src="assets/img/work1.png" alt="work1">
+                        </a>
+                        <div class="work__popup">A comprehensive web application designed for stock analysis, prediction, and trading. The application is intended to cater to users who are interested in monitoring stock performance, making informed decisions based on predictions, and executing trades within a seamless user interface.</div>
+                    </div>
+                    <div class="work__item">
+                        <a href="work2.html" class="work__img">
+                            <img src="assets/img/work2.png" alt="">
+                        </a>
+                        <div class="work__popup">A sophisticated machine learning model integrated into the Stockinzy web application. It is specifically designed to predict stock prices based on historical data, providing users with insights into potential future market movements.</div>
+                    </div>
+                    <div class="work__item">
+                        <a href="work3.html" class="work__img">
+                            <img src="assets/img/work3.png" alt="">
+                        </a>
+                        <div class="work__popup">A healthcare-focused web application designed to address critical needs in hospital management and patient care. It leverages modern web technologies and machine learning to provide users with real-time data, predictive analytics, and an intuitive interface for accessing healthcare services.</div>
+                    </div>
+                    <div class="work__item">
+                        <a href="work4.html" class="work__img">
+                            <img src="assets/img/work4.png" alt="">
+                        </a>
+                        <div class="work__popup">A web-based social platform designed to foster connections, collaboration, and resource sharing among students and educational communities. It serves as a comprehensive platform where students can interact, share academic resources, engage in discussions, and collaborate on projects in a safe and structured environment.</div>
+                    </div>
+                    <div class="work__item">
+                        <a href="work5.html" class="work__img">
+                            <img src="assets/img/work5.png" alt="">
+                        </a>
+                        <div class="work__popup">A scalable web chat application tailored specifically for enhancing the student experience within a university setting. It is designed to provide a comprehensive platform where students can engage with one another, access academic resources, manage their schedules, and collaborate on projects, all within a secure, university-affiliated environment.</div>
+                    </div>
+                    <div class="work__item">
+                        <a href="work6.html" class="work__img">
+                            <img src="assets/img/work6.png" alt="">
+                        </a>
+                        <div class="work__popup">A banking and finance application designed to provide users with a comprehensive suite of financial services in a secure and user-friendly environment. It aims to offer essential banking functionalities, including account management, transaction processing, and financial planning tools, tailored to meet the needs of both individual users and businesses.</div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+                <h2 class="skills__subtitle" style="text-align: center;">Let's talk.</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact__form">
+                        <input type="hidden" name="access_key" value="edbff6b6-787d-4aa3-bb2c-e1d5b9c8f3a9">
+                        <input name="Name" placeholder="Name" class="contact__input">
+                        <input name="Email" placeholder="Email" class="contact__input">
+                        <textarea name="Message" placeholder="Drop your message..." cols="0" rows="10" class="contact__input"></textarea>
+                        <!-- <input type="button" value="Submit" class="contact__button button"> -->
+                        <button type="submit" class="contact__button button">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Let's Connect.</p>
+            <div class="footer__social">
+                <a href="https://www.facebook.com/aadarshxu" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/aadarshxu/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://x.com/AadarshxD" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; Aadarsh Durishetty @2025. All rights reserved</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
