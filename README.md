@@ -2,5 +2,5 @@
 ### Responsive Portfolio 
 
 
-![preview img](/demo.png)
+![preview img](/main.png)
 
